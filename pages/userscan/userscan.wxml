@@ -1,0 +1,4 @@
+<!--userscan.wxml-->
+<view class="qrview">
+  <image class="qrimage" mode="aspectFit" src="{{url}}"></image>
+</view>
