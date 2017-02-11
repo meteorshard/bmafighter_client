@@ -2,6 +2,9 @@
 <view class="top" bindtap="bindUserScan">
   <image class="scan" mode="aspectFit" src="../../images/scan.png"></image>
 </view>
+<view>
+  <button type="primary" bindtap="bindAdminScan">管理员扫码</button>
+</view>
 
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">

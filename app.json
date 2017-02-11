@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/userscan/userscan"
+    "pages/userscan/userscan",
+    "pages/adminscan/adminscan"
   ],
   "window":{
     "backgroundTextStyle":"light",
