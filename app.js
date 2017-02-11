@@ -1,43 +1,44 @@
 //app.js
 App({
   onLaunch: function () {
-    //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-  },
-  getUserInfo:function(cb){
     var that = this
-    if(this.globalData.userInfo){
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    }else{
-      //调用登录接口
-      wx.login({
-        success: function (loginres) {
-          // 登录到菠萝服务器
+
+    // 微信登录
+    wx.login({
+      // 微信登录成功
+      success: function(wxloginres){
+        // 拿code到菠萝服务器换取u_id
+        console.log('拿code到菠萝服务器换取u_id')
+        if (wxloginres.code){
           wx.request({
-            url: 'https://boluogedou.com/api/member/login',
-            method: 'GET',  
+            url: that.globalData.boloUrl + 'member/login',
+            method: 'GET',
             data: {
-              'code': loginres.code
+              'code': wxloginres.code
             },
-            success: function (bolores) {
-              that.globalData.u_id = bolores.data.u_id
-              typeof cb == "function" && cb(that.globalData.u_id)
-            }
-          })
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
+            success: function(bolouidres){
+              // 如果拿到u_id了就写入缓存
+              console.log('拿code到菠萝服务器换取u_id - OK')
+              if (bolouidres.data.u_id){
+                that.globalData.u_id = bolouidres.data.u_id
+              }
             }
           })
         }
-      })
-    }
+
+        // 到微信服务器取用户信息
+        wx.getUserInfo({
+          success: function(wxUserInfoRes){
+            that.globalData.userInfo = wxUserInfoRes.userInfo
+          }
+        })
+      }
+    })
   },
-  globalData:{
-    userInfo:null,
-    u_id:null
+
+  globalData: {
+    boloUrl: 'https://boluogedou.com/api/',
+    u_id: null,
+    userInfo: null
   }
 })

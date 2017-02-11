@@ -1,25 +1,4 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
-
 .top {
   width: 750rpx;
   text-align: center;
@@ -27,4 +6,20 @@
 }
 .scan {
   height: 200rpx;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+  align-items: space-around;
+  justify-content: baseline;
+
+  width: 750rpx;
+  height: 200rpx;
+}
+
+.cell {
+ display: flex;
+ flex-direction: column;
 }
