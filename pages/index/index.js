@@ -29,6 +29,13 @@ Page({
     })
   },
 
+  // 管理员页面
+  bindAdminTap: function () {
+    wx.navigateTo({
+      url: '../admin/admin'
+    })
+  },
+
   onLoad: function () {
     console.log('index onLoad')
 

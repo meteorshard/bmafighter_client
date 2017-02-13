@@ -1,0 +1,6 @@
+/* pages/admin/admin.wxss */
+
+.result {
+  display: flex;
+  flex-direction: column;
+}

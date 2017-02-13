@@ -2,13 +2,19 @@
 <view class="top" bindtap="bindUserScan">
   <image class="scan" mode="aspectFit" src="../../images/scan.png"></image>
   <view wx:if="{{u_id == 23}}">
-    <button type="primary" bindtap="bindAdminScan">管理员扫码</button>
+    <button type="primary" bindtap="bindAdminTap">管理员扫码</button>
   </view>
 </view>
 <view class="main">
   <view class="cell">
     <text>姓名：{{userInfo.nickName}}</text>
     <text>用户ID：{{u_id}}</text>
+  </view>
+  <view class="cell">
+    <text>asdfasdfasd</text>
+  </view>
+  <view class="cell">
+    <text>asdfasdfasd</text>
   </view>
 </view>
 <view>
