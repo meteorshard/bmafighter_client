@@ -2,5 +2,18 @@
 
 .result {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-left: 50rpx;
+  width: 1000rpx;
+  hover: true;
+}
+
+.cellid {
+  width: 100rpx;
+  height: 50rpx;
+}
+
+.cellnickname {
+  width: 250rpx;
+  height: 50rpx;
 }

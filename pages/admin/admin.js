@@ -54,6 +54,12 @@ Page({
     }
     console.log(tempData)
   },
+  adminEditUserInfoTap: function(e){
+    console.log('u_id: ' + e.currentTarget.id + ' tapped.')
+    wx.navigateTo({
+      url: '../adminedituserinfo/adminedituserinfo?u_id=' + e.currentTarget.id
+    })
+  },
   submit: function(e){
   }
 })

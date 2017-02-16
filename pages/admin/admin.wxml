@@ -1,12 +1,30 @@
+
 <!--pages/admin/admin.wxml-->
-<text>pages/admin/admin.wxml</text>
 <view>
-  <input placeholder="Search" bindconfirm="searchConfirm"/>
+  <input placeholder="Search" bindconfirm="searchConfirm" />
 </view>
-<view wx:for="{{search_result.data}}" wx:key="u_id">
-  <view>
-    <text>{{item.u_id}}</text> 
-    <input id="{{item.u_id}}|nickname" bindconfirm="update" value="{{item.nickname}}" />
-    <button id="{{item.u_id}}" bindtap="submit">submit</button>
+<scroll-view scroll-x="true">
+  <view class="result" wx:if="{{search_result.data}}">
+    <view class="cellid">
+      <text font-weight="bold">u_id</text>
+    </view>
+    <view class="cellnickname">
+      <text>nickname</text>
+    </view>
+    <view class="cellnickname">
+      <text>tel</text>
+    </view>
   </view>
-</view>
+  <view class="result" wx:for="{{search_result.data}}" wx:key="u_id"
+  id="{{item.u_id}}" bindtap="adminEditUserInfoTap">
+    <view class="cellid">
+      <text>{{item.u_id}}</text>
+    </view>
+    <view class="cellnickname">
+      <text>{{item.nickname}}</text>
+    </view>
+    <view class="cellnickname">
+      <text>{{item.tel}}</text>
+    </view>
+  </view>
+</scroll-view>

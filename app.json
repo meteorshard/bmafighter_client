@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/userscan/userscan",
-    "pages/admin/admin"
+    "pages/admin/admin",
+    "pages/adminedituserinfo/adminedituserinfo"
   ],
   "window":{
     "backgroundTextStyle":"light",
