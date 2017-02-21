@@ -30,5 +30,12 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  localconfirm:function(e){
+    // 用户在输入框点击小键盘的完成
+    console.log(e)
+    this.setData({
+      'userInfoBolo.e.currentTarget': e.detail.value
+    })
   }
 })

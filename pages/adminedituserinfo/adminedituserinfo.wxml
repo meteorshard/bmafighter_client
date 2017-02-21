@@ -1,8 +1,8 @@
 <!--pages/adminedituserinfo/adminedituserinfo.wxml-->
 <view>
-  <view class="userInfoDetail" wx:for="{{userInfoBolo}}">
+  <view class="userInfoDetail" wx:for="{{userInfoBolo}}" wx:key="*this">
     <text>{{index}}</text>
-    <input value="{{item}}" />
+    <input id="{{index}}" bindconfirm="localconfirm" value="{{item}}" />
   </view>
   <button>Update</button>
 </view>
