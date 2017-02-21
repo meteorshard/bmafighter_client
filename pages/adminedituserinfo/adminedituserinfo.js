@@ -33,9 +33,23 @@ Page({
   },
   localconfirm:function(e){
     // 用户在输入框点击小键盘的完成
-    console.log(e)
+    var updatedUserInfoBolo = this.data.userInfoBolo
+    updatedUserInfoBolo[e.currentTarget.id] = e.detail.value
     this.setData({
-      'userInfoBolo.e.currentTarget': e.detail.value
+      userInfoBolo: updatedUserInfoBolo
+    })
+  },
+  uploadNewData:function(e){
+    // 点击更新数据按钮，上传修改后的数据
+    console.log('更新用户数据')
+    var that = this
+    wx.request({
+      url: app.globalData.boloUrl + 'member/',
+      method: 'POST',
+      data: that.userInfoBolo,
+      success: function(){
+        console.log('更新用户数据 - OK')
+      }
     })
   }
 })

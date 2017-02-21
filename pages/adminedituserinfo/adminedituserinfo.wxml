@@ -4,5 +4,5 @@
     <text>{{index}}</text>
     <input id="{{index}}" bindconfirm="localconfirm" value="{{item}}" />
   </view>
-  <button>Update</button>
+  <button bindtap="uploadNewData">Update</button>
 </view>
